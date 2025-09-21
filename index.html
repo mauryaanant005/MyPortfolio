@@ -536,10 +536,10 @@ const experiences = [
             });
             
             // Show selected content section
-            document.getElementById(${tabName}-content).classList.remove('hidden');
+            document.getElementById(`${tabName}-content`).classList.remove('hidden');
             
             // Add active class to selected tab
-            document.getElementById(${tabName}-tab).classList.add('tab-active');
+            document.getElementById(`${tabName}-tab`).classList.add('tab-active');
             
             // Scroll to top of content
             document.querySelector('.overflow-y-auto').scrollTop = 0;
@@ -547,8 +547,8 @@ const experiences = [
         
         // Project expand/collapse functionality
         function toggleExpand(projectId) {
-            const codeSection = document.getElementById(${projectId}-code);
-            const icon = document.getElementById(${projectId}-icon);
+            const codeSection = document.getElementById(`${projectId}-code`);
+            const icon = document.getElementById(`${projectId}-icon`);
             
             if (codeSection.classList.contains('hidden')) {
                 codeSection.classList.remove('hidden');
@@ -577,7 +577,7 @@ const experiences = [
                 } else if (command === 'help' || command === '') {
                     output.classList.remove('hidden');
                 } else {
-                    output.textContent = Command not found: ${command}. Type 'help' for available commands.;
+                    output.textContent = `Command not found: ${command}. Type 'help' for available commands.`;
                     output.classList.remove('hidden');
                 }
                 
@@ -586,36 +586,37 @@ const experiences = [
         });
         
         // Contact form functionality
-        function sendMessage() {
-            const name = document.getElementById('contact-name').textContent.trim();
-            const email = document.getElementById('contact-email').textContent.trim();
-            const message = document.getElementById('contact-message').textContent.trim();
-            
-            if (name && email && message) {
-                // In a real implementation, you would send this data to a server
-                document.getElementById('contact-success').classList.remove('hidden');
-                
-                // Clear form
-                document.getElementById('contact-name').textContent = '';
-                document.getElementById('contact-email').textContent = '';
-                document.getElementById('contact-message').textContent = '';
-                
-                // Show success message for 5 seconds
-                setTimeout(() => {
-                    document.getElementById('contact-success').classList.add('hidden');
-                }, 5000);
-            } else {
-                alert('Please fill in all fields');
-            }
-        }
+     function sendMessage() {
+    const name = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+    
+    if (name && email && message) {
+        // In a real implementation, you would send this data to a server
+        document.getElementById('contact-success').classList.remove('hidden');
         
-        // Allow Enter key to submit contact form
-        document.getElementById('contact-message').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendMessage();
-            }
-        });
+        // Clear form
+        document.getElementById('contact-name').value = '';
+        document.getElementById('contact-email').value = '';
+        document.getElementById('contact-message').value = '';
+        
+        // Show success message for 5 seconds
+        setTimeout(() => {
+            document.getElementById('contact-success').classList.add('hidden');
+        }, 5000);
+    } else {
+        alert('Please fill in all fields');
+    }
+}
+
+// Allow Enter key to submit contact form
+document.getElementById('contact-message').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+    }
+});
+
     </script>
 </body>
 </html>
