@@ -3,412 +3,619 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anant Maurya - Junior Full Stack Developer</title>
-    <meta name="description" content="Personal portfolio of a passionate full-stack developer with expertise in modern web technologies.">
-    <meta property="og:title" content="Your Name - Full Stack Developer">
-    <meta property="og:description" content="Personal portfolio showcasing projects and skills">
-    <meta property="og:type" content="website">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Anant Maurya | Full-Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <style>
+        .blink {
+            animation: blink-animation 1s steps(2, start) infinite;
+        }
+        @keyframes blink-animation {
+            to { visibility: hidden; }
+        }
+        .sidebar-item:hover .sidebar-icon {
+            color: #4CAF50;
+        }
+        .skill-tag {
+            transition: all 0.2s ease;
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .code-block {
+            font-family: 'Fira Code', monospace;
+        }
+        .terminal-input::before {
+            content: "> ";
+            color: #4CAF50;
+        }
+        .tab-active {
+            border-bottom: 2px solid #4CAF50;
+        }
+    </style>
 </head>
-<body data-theme="dark">
-    <!-- Window Chrome -->
-    <div class="window-chrome">
-        <div class="window-controls">
-            <div class="control-button close"></div>
-            <div class="control-button minimize"></div>
-            <div class="control-button maximize"></div>
-        </div>
-        <div class="window-title">Visual Studio Code - Portfolio</div>
-    </div>
-
-    <!-- Menu Bar -->
-    <div class="menu-bar">
-        <div class="menu-item">File</div>
-        <div class="menu-item">Edit</div>
-        <div class="menu-item">Selection</div>
-        <div class="menu-item">View</div>
-        <div class="menu-item">Go</div>
-        <div class="menu-item">Run</div>
-        <div class="menu-item">Terminal</div>
-        <div class="menu-item">Help</div>
-    </div>
-
-    <div class="main-container">
-        <!-- Activity Bar -->
-        <div class="activity-bar">
-            <div class="activity-item active" data-section="explorer" title="Explorer">
-                <svg width="16" height="16" viewBox="0 0 16 16">
-                    <path fill="currentColor" d="M14.5 3H7.71l-.85-.85L6.51 2h-5l-.5.5v11l.5.5h13l.5-.5v-10L14.5 3zm-.51 8.49V13H7.49v-.51H14zM2 3h4.29l.85.85.35.15H14v2H2V3z"/>
-                </svg>
+<body class="bg-gray-900 text-gray-200 font-mono">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="w-16 md:w-64 bg-gray-800 flex flex-col border-r border-gray-700">
+            <div class="p-4 border-b border-gray-700 flex items-center justify-center md:justify-start">
+                <i data-feather="code" class="text-green-500 mr-2"></i>
+                <span class="hidden md:block font-bold">PORTFOLIO</span>
             </div>
-            <div class="activity-item" data-section="projects" title="Projects">
-                <svg width="16" height="16" viewBox="0 0 16 16">
-                    <path fill="currentColor" d="M1.5 1h13l.5.5v13l-.5.5h-13l-.5-.5v-13l.5-.5zM2 2v12h12V2H2zm6.5 6.5l1.5-1.5L8.5 5.5 7 7l-1.5-1.5L4 7l1.5 1.5L4 10l1.5 1.5L7 10l1.5 1.5L10 10l-1.5-1.5z"/>
-                </svg>
-            </div>
-            <div class="activity-item" data-section="contact" title="Contact">
-                <svg width="16" height="16" viewBox="0 0 16 16">
-                    <path fill="currentColor" d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.784.784 2 1.75 2ZM1.5 12.251c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V5.809L8.38 9.397a.75.75 0 0 1-.76 0L1.5 5.809v6.442Zm13-8.181v-.32a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25v.32L8 7.88l6.5-3.81Z"/>
-                </svg>
-            </div>
-            <div class="activity-item" data-section="resume" title="Resume">
-                <svg width="16" height="16" viewBox="0 0 16 16">
-                    <path fill="currentColor" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H4z"/>
-                    <path fill="currentColor" d="M4.603 12.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.701 19.701 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.187-.012.395-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.065.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.716 5.716 0 0 1-.911-.95 11.642 11.642 0 0 0-1.997.406 11.311 11.311 0 0 1-1.021 1.51c-.29.35-.608.655-.926.787a.793.793 0 0 1-.58.029z"/>
-                </svg>
-            </div>
-        </div>
-
-        <!-- Primary Sidebar -->
-        <div class="primary-sidebar">
-            <div class="sidebar-header">
-                <span class="sidebar-title">EXPLORER</span>
-                <div class="sidebar-actions">
-                    <svg width="16" height="16" viewBox="0 0 16 16">
-                        <path fill="currentColor" d="M14 7v1H8v6H7V8H1V7h6V1h1v6h6z"/>
-                    </svg>
+            <nav class="flex-1 overflow-y-auto">
+                <div class="sidebar-item p-4 flex items-center cursor-pointer hover:bg-gray-700" onclick="openTab('about')">
+                    <i data-feather="user" class="sidebar-icon mr-3 text-gray-400"></i>
+                    <span class="hidden md:block">About.js</span>
                 </div>
-            </div>
-            <div class="file-tree">
-                <div class="folder expanded">
-                    <div class="folder-header">
-                        <svg width="16" height="16" viewBox="0 0 16 16" class="folder-icon">
-                            <path fill="currentColor" d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75z"/>
-                        </svg>
-                        <span>PORTFOLIO</span>
-                    </div>
-                    <div class="folder-content">
-                        <div class="file-item active" data-file="INTRO.html">
-                            <svg width="16" height="16" viewBox="0 0 16 16" class="file-icon html">
-                                <path fill="#e34c26" d="M1 1v14h14V1H1zm12.5 12.5h-11v-11h11v11z"/>
-                            </svg>
-                            <span>index.html</span>
-                        </div>
-                        <div class="file-item" data-file="PROJECTS.css">
-                            <svg width="16" height="16" viewBox="0 0 16 16" class="file-icon css">
-                                <path fill="#1572b6" d="M1 1v14h14V1H1zm12.5 12.5h-11v-11h11v11z"/>
-                            </svg>
-                            <span>style.css</span>
-                        </div>
-                        <div class="file-item" data-file="script.js">
-                            <svg width="16" height="16" viewBox="0 0 16 16" class="file-icon js">
-                                <path fill="#f1e05a" d="M1 1v14h14V1H1zm12.5 12.5h-11v-11h11v11z"/>
-                            </svg>
-                            <span>script.js</span>
-                        </div>
-                        <div class="file-item" data-file="readme.md">
-                            <svg width="16" height="16" viewBox="0 0 16 16" class="file-icon md">
-                                <path fill="#083fa1" d="M1 1v14h14V1H1zm12.5 12.5h-11v-11h11v11z"/>
-                            </svg>
-                            <span>readme.md</span>
-                        </div>
-                    </div>
+                <div class="sidebar-item p-4 flex items-center cursor-pointer hover:bg-gray-700" onclick="openTab('projects')">
+                    <i data-feather="folder" class="sidebar-icon mr-3 text-gray-400"></i>
+                    <span class="hidden md:block">Projects.js</span>
                 </div>
+                <div class="sidebar-item p-4 flex items-center cursor-pointer hover:bg-gray-700" onclick="openTab('experience')">
+                    <i data-feather="briefcase" class="sidebar-icon mr-3 text-gray-400"></i>
+                    <span class="hidden md:block">Experience.js</span>
+                </div>
+                <div class="sidebar-item p-4 flex items-center cursor-pointer hover:bg-gray-700" onclick="openTab('skills')">
+                    <i data-feather="cpu" class="sidebar-icon mr-3 text-gray-400"></i>
+                    <span class="hidden md:block">Skills.js</span>
+                </div>
+                <div class="sidebar-item p-4 flex items-center cursor-pointer hover:bg-gray-700" onclick="openTab('achievements')">
+                    <i data-feather="award" class="sidebar-icon mr-3 text-gray-400"></i>
+                    <span class="hidden md:block">Achievements.js</span>
+                </div>
+                <div class="sidebar-item p-4 flex items-center cursor-pointer hover:bg-gray-700" onclick="openTab('contact')">
+                    <i data-feather="mail" class="sidebar-icon mr-3 text-gray-400"></i>
+                    <span class="hidden md:block">Contact.js</span>
+                </div>
+            </nav>
+            <div class="p-4 border-t border-gray-700 text-xs text-gray-500 hidden md:block">
+                <div>VS Code Portfolio</div>
+                <div>v1.0.0</div>
             </div>
         </div>
 
-        <!-- Editor Area -->
-        <div class="editor-container">
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
             <!-- Tab Bar -->
-            <div class="tab-bar">
-                <div class="tab active" data-file="index.html">
-                    <svg width="16" height="16" viewBox="0 0 16 16" class="tab-icon">
-                        <path fill="#e34c26" d="M1 1v14h14V1H1zm12.5 12.5h-11v-11h11v11z"/>
-                    </svg>
-                    <span>index.html</span>
-                    <div class="tab-close">×</div>
+            <div class="bg-gray-800 border-b border-gray-700 flex overflow-x-auto">
+                <div id="about-tab" class="tab px-4 py-3 cursor-pointer tab-active" onclick="openTab('about')">
+                    <span>About.js</span>
+                </div>
+                <div id="projects-tab" class="tab px-4 py-3 cursor-pointer" onclick="openTab('projects')">
+                    <span>Projects.js</span>
+                </div>
+                <div id="experience-tab" class="tab px-4 py-3 cursor-pointer" onclick="openTab('experience')">
+                    <span>Experience.js</span>
+                </div>
+                <div id="skills-tab" class="tab px-4 py-3 cursor-pointer" onclick="openTab('skills')">
+                    <span>Skills.js</span>
+                </div>
+                <div id="achievements-tab" class="tab px-4 py-3 cursor-pointer" onclick="openTab('achievements')">
+                    <span>Achievements.js</span>
+                </div>
+                <div id="contact-tab" class="tab px-4 py-3 cursor-pointer" onclick="openTab('contact')">
+                    <span>Contact.js</span>
                 </div>
             </div>
 
             <!-- Editor Content -->
-            <div class="editor-content">
-                <!-- About Me Section -->
-                <div class="file-content active" id="index.html">
-                    <div class="line-numbers">
-                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+            <div class="flex-1 overflow-y-auto p-4 md:p-8 bg-gray-900">
+                <!-- About Section -->
+                <div id="about-content" class="content-section">
+                    <div class="mb-6">
+                        <h1 class="text-2xl md:text-4xl font-bold mb-2 text-green-400">
+                            <span id="typing-text"></span><span class="blink">|</span>
+                        </h1>
+                        <div class="text-gray-400 mb-4">// Full-Stack Developer | Cloud Enthusiast</div>
                     </div>
-                    <div class="code-content">
-                        <div class="code-line"><span class="tag">&lt;!DOCTYPE html&gt;</span></div>
-                        <div class="code-line"><span class="tag">&lt;html</span> <span class="attribute">lang=</span><span class="string">"en"</span><span class="tag">&gt;</span></div>
-                        <div class="code-line"><span class="tag">&lt;head&gt;</span></div>
-                        <div class="code-line">    <span class="tag">&lt;title&gt;</span>About Me<span class="tag">&lt;/title&gt;</span></div>
-                        I’m an IT student passionate about creating digital solutions that make an impact. With a strong interest in Full-Stack Development and UI/UX Design, I love building applications that are user-friendly, efficient, and visually appealing.
-                        <div class="code-line"><span class="tag">&lt;/head&gt;</span></div>
-                        <div class="code-line"><span class="tag">&lt;body&gt;</span></div>
-                        <div class="code-line">    <span class="comment">&lt;!-- Welcome Message --&gt;</span></div>
-                        <div class="code-line">    <span class="tag">&lt;h1&gt;</span><span id="typing-text"></span><span class="cursor">|</span><span class="tag">&lt;/h1&gt;</span></div>
-                        <div class="code-line">    </div>
-                        <div class="code-line">    <span class="comment">&lt;!-- Personal Information --&gt;</span></div>
-                        <div class="code-line">    <span class="tag">&lt;section</span> <span class="attribute">class=</span><span class="string">"about-section"</span><span class="tag">&gt;</span></div>
-                        <div class="code-line">        <span class="tag">&lt;div</span> <span class="attribute">class=</span><span class="string">"profile"</span><span class="tag">&gt;</span></div>
-                        <div class="code-line">            <span class="tag">&lt;div</span> <span class="attribute">class=</span><span class="string">"profile-image"</span><span class="tag">&gt;</span>👨‍💻<span class="tag">&lt;/div&gt;</span></div>
-                        <div class="code-line">            <span class="tag">&lt;h2&gt;</span>Your Name<span class="tag">&lt;/h2&gt;</span></div>
-                        <div class="code-line">            <span class="tag">&lt;h3&gt;</span>Junior Full Stack Developer<span class="tag">&lt;/h3&gt;</span></div>
-                        <div class="code-line">        <span class="tag">&lt;/div&gt;</span></div>
-                        <div class="code-line">        </div>
-                        <div class="code-line">        <span class="tag">&lt;p&gt;</span><span class="tag">&lt;/p&gt;</span></div>
-                        <div class="code-line">        </div>
-                        <div class="code-line">        <span class="comment">&lt;!-- Skills Array --&gt;</span></div>
-                        <div class="code-line">        <span class="tag">&lt;div</span> <span class="attribute">class=</span><span class="string">"skills"</span><span class="tag">&gt;</span></div>
-                        <div class="code-line">            <span class="tag">&lt;h4&gt;</span>Skills:<span class="tag">&lt;/h4&gt;</span></div>
-                        <div class="code-line">            <span class="tag">&lt;ul&gt;</span></div>
-                        <div class="code-line">                <span class="tag">&lt;li&gt;</span>JavaScript<span class="tag">&lt;/li&gt;</span></div>
-                        <div class="code-line">                <span class="tag">&lt;li&gt;</span>React<span class="tag">&lt;/li&gt;</span></div>
-                        <div class="code-line">                <span class="tag">&lt;li&gt;</span>Node.js<span class="tag">&lt;/li&gt;</span></div>
-                        <div class="code-line">                <span class="tag">&lt;li&gt;</span>Python<span class="tag">&lt;/li&gt;</span></div>
-                        <div class="code-line">                <span class="tag">&lt;li&gt;</span>HTML/CSS<span class="tag">&lt;/li&gt;</span></div>
-                        <div class="code-line">                <span class="tag">&lt;li&gt;</span>Git<span class="tag">&lt;/li&gt;</span></div>
-                        <div class="code-line">                <span class="tag">&lt;li&gt;</span>MongoDB<span class="tag">&lt;/li&gt;</span></div>
-                        <div class="code-line">                <span class="tag">&lt;li&gt;</span>AWS<span class="tag">&lt;/li&gt;</span></div>
-                    </div>
+
+                    <pre class="bg-gray-800 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">const anant = {
+    name: "Anant Maurya",
+    email: "mauryaanant005@gmail.com",
+    phone: "+91-9769543711",
+    github: "github.com/mauryaanant005",
+    linkedin: "linkedin.com/in/anantmaurya06",
+    
+    education: [
+        {
+            degree: "B.E. in Information Technology",
+            institution: "TCET, Mumbai",
+            period: "2025–28",
+            grade: "CGPA: 9.0"
+        },
+        {
+            degree: "Diploma in Information Technology",
+            institution: "Thakur Polytechnic",
+            period: "2022–25",
+            grade: "88.06%"
+        }
+    ]
+};</code></pre>
                 </div>
 
                 <!-- Projects Section -->
-                <div class="file-content" id="style.css">
-                    <div class="line-numbers">
-                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
+                <div id="projects-content" class="content-section hidden">
+                    <h2 class="text-2xl font-bold mb-6 text-green-400">Projects</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Project 1 -->
+                        <div class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-green-500 transition-all duration-300">
+                            <div class="p-4 border-b border-gray-700 bg-gray-900 flex justify-between items-center">
+                                <h3 class="font-bold text-green-400">MedTech App</h3>
+                                <button class="text-gray-400 hover:text-white" onclick="toggleExpand('project1')">
+                                    <i data-feather="chevron-down" id="project1-icon"></i>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-gray-300 mb-2">Mobile app for hospital medicine quality checks using QR/Barcode with Firebase backend and multilingual support.</p>
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="bg-blue-900 text-blue-200 px-2 py-1 rounded text-xs">React Native</span>
+                                    <span class="bg-green-900 text-green-200 px-2 py-1 rounded text-xs">Firebase</span>
+                                    <span class="bg-purple-900 text-purple-200 px-2 py-1 rounded text-xs">Multilingual</span>
+                                </div>
+                            </div>
+                            <div id="project1-code" class="hidden bg-gray-900 p-4 border-t border-gray-700">
+                                <pre><code class="language-javascript">// Capstone Project - Published in IJARSCT
+function checkMedicineQuality(qrCode) {
+    const medicine = firebase.db.query(qrCode);
+    if (medicine.expired || medicine.recalled) {
+        alert("⚠ Medicine Quality Issue Detected!");
+        return false;
+    }
+    return true;
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-green-500 transition-all duration-300">
+                            <div class="p-4 border-b border-gray-700 bg-gray-900 flex justify-between items-center">
+                                <h3 class="font-bold text-green-400">T20 World Cup Analysis</h3>
+                                <button class="text-gray-400 hover:text-white" onclick="toggleExpand('project2')">
+                                    <i data-feather="chevron-down" id="project2-icon"></i>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-gray-300 mb-2">Cricket analytics platform using Streamlit, NumPy, Pandas, and Matplotlib for data visualization.</p>
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="bg-yellow-900 text-yellow-200 px-2 py-1 rounded text-xs">Python</span>
+                                    <span class="bg-blue-900 text-blue-200 px-2 py-1 rounded text-xs">Streamlit</span>
+                                    <span class="bg-red-900 text-red-200 px-2 py-1 rounded text-xs">Data Analysis</span>
+                                </div>
+                            </div>
+                            <div id="project2-code" class="hidden bg-gray-900 p-4 border-t border-gray-700">
+                                <pre><code class="language-python"># Data Analysis for Cricket Statistics
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def analyze_player_performance(player_data):
+    df = pd.DataFrame(player_data)
+    plt.figure(figsize=(10,6))
+    df['runs'].plot(kind='bar')
+    plt.title('Player Performance in T20 World Cup')
+    plt.xlabel('Matches')
+    plt.ylabel('Runs')
+    st.pyplot()</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-green-500 transition-all duration-300">
+                            <div class="p-4 border-b border-gray-700 bg-gray-900 flex justify-between items-center">
+                                <h3 class="font-bold text-green-400">E-Commerce Website</h3>
+                                <button class="text-gray-400 hover:text-white" onclick="toggleExpand('project3')">
+                                    <i data-feather="chevron-down" id="project3-icon"></i>
+                                </button>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-gray-300 mb-2">Full-stack MERN application with user authentication, product listing, shopping cart, and Node.js backend.</p>
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="bg-blue-900 text-blue-200 px-2 py-1 rounded text-xs">React</span>
+                                    <span class="bg-green-900 text-green-200 px-2 py-1 rounded text-xs">Node.js</span>
+                                    <span class="bg-purple-900 text-purple-200 px-2 py-1 rounded text-xs">MongoDB</span>
+                                </div>
+                            </div>
+                            <div id="project3-code" class="hidden bg-gray-900 p-4 border-t border-gray-700">
+                                <pre><code class="language-javascript">// MERN Stack E-Commerce Backend
+const express = require('express');
+const mongoose = require('mongoose');
+const productRoutes = require('./routes/products');
+
+const app = express();
+app.use(express.json());
+
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('DB Connected'))
+    .catch(err => console.error(err));
+
+app.use('/api/products', productRoutes);
+
+app.listen(5000, () => {
+    console.log('Server running on port 5000');
+});</code></pre>
+                            </div>
+                        </div>
                     </div>
-                    <div class="code-content">
-                        <div class="code-line"><span class="comment">/* My Projects Portfolio */</span></div>
-                        <div class="code-line"></div>
-                        <div class="code-line"><span class="selector">.projects</span> {</div>
-                        <div class="code-line">    <span class="property">display</span>: <span class="value">grid</span>;</div>
-                        <div class="code-line">    <span class="property">gap</span>: <span class="value">2rem</span>;</div>
-                        <div class="code-line">}</div>
-                        <div class="code-line"></div>
-                        <div class="projects-grid">
-                            <div class="project-card">
-                                <div class="code-line"><span class="comment">/* Project 1: MED-TECH App */</span></div>
-                                <div class="project-content">
-                                    <h3>MED-TECH App</h3>
-                                    <p> Built a mobile app to automate quality checks for hospital medicines using QR/Barcode scanning.</p>
-                                    <div class="tech-stack">
-                                        <span class="tech">React Native(Expo)</span>
-                                        <span class="tech">Firebase Auth and DB</span>
-                                        <span class="tech">Google Api</span>
-                                        <span class="tech">ExpressJS</span>
+                </div>
+
+                <!-- Experience Section -->
+                <div id="experience-content" class="content-section hidden">
+                    <h2 class="text-2xl font-bold mb-6 text-green-400">Experience</h2>
+                    
+                    <div class="bg-gray-800 rounded-lg p-6 mb-6 border border-gray-700">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-green-900 text-green-200 rounded-full p-3 mr-4">
+                                <i data-feather="briefcase"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl">Intern @ Static.int.Educare</h3>
+                                <p class="text-gray-400">Jun–Aug 2024</p>
+                            </div>
+                        </div>
+                        <div class="pl-16">
+                            <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                <li>Worked with JavaScript, MERN stack, Git, and GitHub</li>
+                                <li>Developed Weather Forecast App and E-commerce Website</li>
+                                <li>Learned ML basics, data visualization techniques</li>
+                                <li>Collaborated using Agile methodologies</li>
+                            </ul>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="bg-blue-900 text-blue-200 px-2 py-1 rounded text-xs">JavaScript</span>
+                                <span class="bg-green-900 text-green-200 px-2 py-1 rounded text-xs">MERN</span>
+                                <span class="bg-purple-900 text-purple-200 px-2 py-1 rounded text-xs">Git</span>
+                                <span class="bg-yellow-900 text-yellow-200 px-2 py-1 rounded text-xs">Agile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <pre class="bg-gray-800 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">// Experience Timeline
+const experiences = [
+    {
+        role: "Intern",
+        company: "Static.int.Educare",
+        period: "Jun 2024 - Aug 2024",
+        responsibilities: [
+            "Developed full-stack applications",
+            "Implemented RESTful APIs",
+            "Collaborated in Agile teams",
+            "Learned ML and data visualization"
+        ],
+        technologies: ["JavaScript", "React", "Node.js", "MongoDB"]
+    }
+];</code></pre>
+                </div>
+
+                <!-- Skills Section -->
+                <div id="skills-content" class="content-section hidden">
+                    <h2 class="text-2xl font-bold mb-6 text-green-400">Skills</h2>
+                    
+                    <div class="bg-gray-800 rounded-lg p-6 mb-6 border border-gray-700">
+                        <div class="terminal-window bg-black text-green-400 p-4 rounded-lg font-mono overflow-x-auto">
+                            <div class="mb-2">$ anant --skills</div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <!-- Languages -->
+                                <div>
+                                    <div class="text-blue-400 mb-2">Languages:</div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="skill-tag bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">C/C++</span>
+                                        <span class="skill-tag bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Python</span>
+                                        <span class="skill-tag bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                                        <span class="skill-tag bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">HTML/CSS</span>
                                     </div>
-                                    <div class="project-links">
-                                        <a href="https://github.com/mauryaanant005/MED-TECH" target="_blank" class="project-link">GitHub</a>
-                                        <a href="https://your-ecommerce-demo.com" target="_blank" class="project-link demo"></a>
+                                </div>
+                                
+                                <!-- Frameworks -->
+                                <div>
+                                    <div class="text-purple-400 mb-2">Frameworks:</div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="skill-tag bg-purple-900 text-purple-200 px-3 py-1 rounded-full text-sm">React.js</span>
+                                        <span class="skill-tag bg-purple-900 text-purple-200 px-3 py-1 rounded-full text-sm">Node.js</span>
+                                        <span class="skill-tag bg-purple-900 text-purple-200 px-3 py-1 rounded-full text-sm">Express</span>
+                                        <span class="skill-tag bg-purple-900 text-purple-200 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Databases/Cloud -->
+                                <div>
+                                    <div class="text-green-400 mb-2">Databases/Cloud:</div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="skill-tag bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                                        <span class="skill-tag bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">Firebase</span>
+                                        <span class="skill-tag bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">MySQL</span>
+                                        <span class="skill-tag bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">AWS Basics</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Tools -->
+                                <div>
+                                    <div class="text-yellow-400 mb-2">Tools:</div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="skill-tag bg-yellow-900 text-yellow-200 px-3 py-1 rounded-full text-sm">Git</span>
+                                        <span class="skill-tag bg-yellow-900 text-yellow-200 px-3 py-1 rounded-full text-sm">GitHub</span>
+                                        <span class="skill-tag bg-yellow-900 text-yellow-200 px-3 py-1 rounded-full text-sm">VS Code</span>
+                                        <span class="skill-tag bg-yellow-900 text-yellow-200 px-3 py-1 rounded-full text-sm">Postman</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Interests -->
+                                <div>
+                                    <div class="text-red-400 mb-2">Interests:</div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="skill-tag bg-red-900 text-red-200 px-3 py-1 rounded-full text-sm">Full-Stack Dev</span>
+                                        <span class="skill-tag bg-red-900 text-red-200 px-3 py-1 rounded-full text-sm">Cloud Services</span>
+                                        <span class="skill-tag bg-red-900 text-red-200 px-3 py-1 rounded-full text-sm">Data Analysis</span>
+                                        <span class="skill-tag bg-red-900 text-red-200 px-3 py-1 rounded-full text-sm">UI/UX Design</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="project-card">
-                                <div class="code-line"><span class="comment">/* Project 2: E-Commerce Platform */</span></div>
-                                <div class="project-content">
-                                    <h3>E-Commerce Platform</h3>
-                                    <p>Full-stack e-commerce solution with modern UI/UX and admin dashboard.</p>
-                                    <div class="tech-stack">
-                                        <span class="tech">React</span>
-                                        <span class="tech">Node.js</span>
-                                        <span class="tech">MongoDB</span>
-                                        <span class="tech">ExpressJS</span>
-                                    </div>
-                                    <div class="project-links">
-                                        <a href="https://github.com/mauryaanant005/E-commerce-Web-App" target="_blank" class="project-link">GitHub</a>
-                                        <a href="https://your-ecommerce-demo.com" target="_blank" class="project-link demo"></a>
-                                    </div>
+                            <div class="mt-4 text-gray-500">// Hover over skills to see them pop!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements Section -->
+                <div id="achievements-content" class="content-section hidden">
+                    <h2 class="text-2xl font-bold mb-6 text-green-400">Achievements</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-green-500 transition-all">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-yellow-900 text-yellow-200 rounded-full p-3 mr-4">
+                                    <i data-feather="award"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Team Leader</h3>
+                                    <p class="text-gray-400">Smart India Hackathon Internal</p>
                                 </div>
                             </div>
-                            
-                            <div class="project-card">
-                                <div class="code-line"><span class="comment">/* Project 3: T20-World Cup Analysis */</span></div>
-                                <div class="project-content">
-                                    <h3>T20-World Cup Analysis</h3>
-                                    <p>Developed an interactive cricket analytics platform displaying player and match records.</p>
-                                    <div class="tech-stack">
-                                        <span class="tech">Python</span>
-                                        <span class="tech">Streamlit</span>
-                                        <span class="tech">Google colab</span>
-                                        
-                                    </div>
-                                    <div class="project-links">
-                                        <a href="https://github.com/mauryaanant005/Worldcup-Analysis-" target="_blank" class="project-link">GitHub</a>
-                                        <a href="https://t20-world-cup-com.onrender.com/" target="_blank" class="project-link demo">Live Demo</a>
-                                    </div>
+                            <p class="text-gray-300">Led team to Top 20 position in national-level hackathon, coordinating development of innovative solution.</p>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-green-500 transition-all">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-900 text-blue-200 rounded-full p-3 mr-4">
+                                    <i data-feather="flag"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Cricket Champion</h3>
+                                    <p class="text-gray-400">Aventura Winner, Two-Time Semifinalist</p>
                                 </div>
                             </div>
-                            
-                            <div class="project-card">
-                                <div class="code-line"><span class="comment">/* Project 4: Weather Dashboard */</span></div>
-                                <div class="project-content">
-                                    <h3>Weather Dashboard</h3>
-                                    <p>Interactive weather dashboard with location-based forecasts and historical data visualization.</p>
-                                    <div class="tech-stack">
-                                        <span class="tech">JavaScript</span>
-                                        <span class="tech">Chart.js</span>
-                                        <span class="tech">Weather API</span>
-                                        <span class="tech">CSS3</span>
-                                    </div>
-                                    <div class="project-links">
-                                        <a href="https://github.com/yourusername/Weather-App" target="_blank" class="project-link">GitHub</a>
-                                        <a href="https://weather-app-mu-orpin-24.vercel.app/" target="_blank" class="project-link demo">Live Demo</a>
-                                    </div>
+                            <p class="text-gray-300">Demonstrated leadership and teamwork skills in competitive sports tournaments.</p>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-green-500 transition-all">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-green-900 text-green-200 rounded-full p-3 mr-4">
+                                    <i data-feather="users"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Group Leader</h3>
+                                    <p class="text-gray-400">MedTech Capstone Project</p>
                                 </div>
                             </div>
+                            <p class="text-gray-300">Successfully led team in developing healthcare solution published in IJARSCT journal.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Contact Section -->
-                <div class="file-content" id="script.js">
-                    <div class="line-numbers">
-                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+                <div id="contact-content" class="content-section hidden">
+                    <h2 class="text-2xl font-bold mb-6 text-green-400">Contact Me</h2>
+                    
+                    <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                        <div class="terminal-window bg-black text-green-400 p-4 rounded-lg font-mono">
+                            <div class="mb-4">$ send-message --to anant</div>
+                            
+                            <div class="mb-2">
+                                <span class="text-blue-400">Name:</span> 
+                                <span class="terminal-input inline-block" contenteditable="true" id="contact-name"></span>
+                            </div>
+                            
+                            <div class="mb-2">
+                                <span class="text-blue-400">Email:</span> 
+                                <span class="terminal-input inline-block" contenteditable="true" id="contact-email"></span>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <span class="text-blue-400">Message:</span> 
+                                <div class="terminal-input mt-2 min-h-20 p-2 border border-gray-700 rounded" contenteditable="true" id="contact-message"></div>
+                            </div>
+                            
+                            <button class="bg-green-700 hover:bg-green-600 text-white px-4 py-2 rounded" onclick="sendMessage()">
+                                <i data-feather="send" class="mr-2"></i> Submit (Enter)
+                            </button>
+                            
+                            <div class="mt-4 text-gray-500 hidden" id="contact-success">
+                                <i data-feather="check-circle" class="text-green-500 inline mr-2"></i>
+                                Message sent successfully! I'll get back to you soon.
+                            </div>
+                        </div>
                     </div>
-                    <div class="code-content">
-                        <div class="code-line"><span class="comment">// Contact Form Handler</span></div>
-                        <div class="code-line"></div>
-                        <div class="code-line"><span class="keyword">function</span> <span class="function">sendMessage</span>() {</div>
-                        <div class="code-line">    <span class="keyword">const</span> <span class="variable">form</span> = <span class="function">document.querySelector</span>(<span class="string">'.contact-form'</span>);</div>
-                        <div class="code-line">    <span class="keyword">return</span> <span class="string">"Message sent successfully!"</span>;</div>
-                        <div class="code-line">}</div>
-                        <div class="code-line"></div>
-                        <div class="contact-section">
-                            <div class="code-line"><span class="comment">// Contact Information</span></div>
-                            <div class="contact-content">
-                                <h3>Let's Connect!</h3>
-                                <p>I'm always interested in hearing about new opportunities and projects.</p>
-                                
-                                <div class="contact-links">
-                                    <a href="mailto:mauryaanant005@gmail.com" class="contact-link">
-                                        📧 your.email@example.com
-                                    </a>
-                                    <a href="https://linkedin.com/in/anantmaurya06" target="_blank" class="contact-link">
-                                        💼 LinkedIn
-                                    </a>
-                                    <a href="https://github.com/mauryaanant005" target="_blank" class="contact-link">
-                                        🐙 GitHub
-                                    </a>
-                                    <a href="https://twitter.com/yourusername" target="_blank" class="contact-link">
-                                        🐦 Twitter
-                                    </a>
+                    
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                            <h3 class="font-bold mb-4 text-green-400">Direct Contact</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <i data-feather="mail" class="mr-3 text-blue-400"></i>
+                                    <span>mauryaanant005@gmail.com</span>
                                 </div>
-                                
-                                <form class="contact-form" id="contactForm">
-                                    <div class="form-group">
-                                        <label for="name">Name:</label>
-                                        <input type="text" id="name" name="name" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email:</label>
-                                        <input type="email" id="email" name="email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="message">Message:</label>
-                                        <textarea id="message" name="message" rows="5" required></textarea>
-                                    </div>
-                                    <button type="submit" class="submit-btn">Send Message</button>
-                                </form>
+                                <div class="flex items-center">
+                                    <i data-feather="phone" class="mr-3 text-blue-400"></i>
+                                    <span>+91-9769543711</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-feather="github" class="mr-3 text-blue-400"></i>
+                                    <span>github.com/mauryaanant005</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-feather="linkedin" class="mr-3 text-blue-400"></i>
+                                    <span>linkedin.com/in/anantmaurya06</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                            <h3 class="font-bold mb-4 text-green-400">Availability</h3>
+                            <p class="mb-4 text-gray-300">I'm currently available for freelance projects and full-time opportunities. Feel free to reach out!</p>
+                            <div class="flex items-center text-green-400">
+                                <i data-feather="clock" class="mr-2"></i>
+                                <span>Response Time: Usually within 24 hours</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Resume Section -->
-                <div class="file-content" id="readme.md">
-                    <div class="line-numbers">
-                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
+            <!-- Terminal Easter Egg -->
+            <div class="bg-gray-800 border-t border-gray-700 p-2 hidden md:block">
+                <div class="flex items-center">
+                    <div class="bg-green-500 w-3 h-3 rounded-full mr-2"></div>
+                    <div class="bg-yellow-500 w-3 h-3 rounded-full mr-2"></div>
+                    <div class="bg-red-500 w-3 h-3 rounded-full mr-2"></div>
+                    <div class="text-gray-400 text-sm ml-2">terminal</div>
+                </div>
+                <div class="mt-2 font-mono text-sm">
+                    <div class="flex items-start">
+                        <span class="text-green-400 mr-2">$</span>
+                        <span class="terminal-input flex-1" contenteditable="true" id="mini-terminal"></span>
                     </div>
-                    <div class="code-content">
-                        <div class="code-line"><span class="md-header"># Resume & Experience</span></div>
-                        <div class="code-line"></div>
-                        <div class="resume-content">
-                            <div class="resume-header">
-                                <h2>Professional Experience</h2>
-                                <button class="download-btn" id="downloadResume">📄 Download Resume</button>
-                            </div>
-                            
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-date">2022 - Present</div>
-                                    <div class="timeline-content">
-                                        <h3>Senior Full Stack Developer</h3>
-                                        <h4>Tech Solutions Inc.</h4>
-                                        <p>Lead development of web applications using modern frameworks and technologies.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="timeline-item">
-                                    <div class="timeline-date">2020 - 2022</div>
-                                    <div class="timeline-content">
-                                        <h3>Frontend Developer</h3>
-                                        <h4>Digital Agency Co.</h4>
-                                        <p>Developed responsive web interfaces and collaborated with design teams.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="timeline-item">
-                                    <div class="timeline-date">2019 - 2020</div>
-                                    <div class="timeline-content">
-                                        <h3>Junior Developer</h3>
-                                        <h4>StartUp Ventures</h4>
-                                        <p>Built and maintained web applications while learning industry best practices.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="education">
-                                <h3>Education</h3>
-                                <div class="education-item">
-                                    <h4>Bachelor of Computer Science</h4>
-                                    <p>University of Technology - 2019</p>
-                                    <p>Focused on software engineering and web development technologies.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="terminal-output" class="text-gray-400 mt-1 hidden">
+                        Available commands: about, projects, experience, skills, achievements, contact, clear
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Status Bar -->
-    <div class="status-bar">
-        <div class="status-left">
-            <span class="status-item">Ln 1, Col 1</span>
-            <span class="status-item">UTF-8</span>
-            <span class="status-item">HTML</span>
-        </div>
-        <div class="status-right">
-            <button class="theme-toggle" id="themeToggle">
-                <span class="theme-icon">🌙</span>
-                <span class="theme-text">Dark</span>
-            </button>
-            <span class="status-item">Spaces: 4</span>
-        </div>
-    </div>
-
-    <!-- Terminal -->
-    <div class="terminal" id="terminal">
-        <div class="terminal-header">
-            <div class="terminal-title">TERMINAL</div>
-            <div class="terminal-controls">
-                <button class="terminal-minimize" id="terminalToggle">−</button>
-            </div>
-        </div>
-        <div class="terminal-content">
-            <div class="terminal-line">
-                <span class="terminal-prompt">portfolio@vscode:~$</span>
-                <span class="terminal-command">npm start</span>
-            </div>
-            <div class="terminal-line">
-                <span class="terminal-output">✅ Portfolio loaded successfully</span>
-            </div>
-            <div class="terminal-line">
-                <span class="terminal-output">🎯 Ready for visitors</span>
-            </div>
-            <div class="terminal-line">
-                <span class="terminal-prompt">portfolio@vscode:~$</span>
-                <span class="terminal-cursor">_</span>
-            </div>
-        </div>
-    </div>
-
-    <script src="app.js"></script>
+    <script>
+        // Initialize feather icons
+        feather.replace();
+        
+        // Initialize AOS animations
+        AOS.init();
+        
+        // Typing effect for hero text
+        const typingText = document.getElementById('typing-text');
+        const textToType = "> Hello, I'm Anant Maurya – Full-Stack Developer.";
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < textToType.length) {
+                typingText.innerHTML += textToType.charAt(i);
+                i++;
+                setTimeout(typeWriter, Math.random() * 100 + 50);
+            }
+        }
+        
+        // Start typing effect after page loads
+        window.addEventListener('load', () => {
+            typeWriter();
+            
+            // Set focus to mini terminal
+            document.getElementById('mini-terminal').focus();
+        });
+        
+        // Tab switching functionality
+        function openTab(tabName) {
+            // Hide all content sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('tab-active');
+            });
+            
+            // Show selected content section
+            document.getElementById(${tabName}-content).classList.remove('hidden');
+            
+            // Add active class to selected tab
+            document.getElementById(${tabName}-tab).classList.add('tab-active');
+            
+            // Scroll to top of content
+            document.querySelector('.overflow-y-auto').scrollTop = 0;
+        }
+        
+        // Project expand/collapse functionality
+        function toggleExpand(projectId) {
+            const codeSection = document.getElementById(${projectId}-code);
+            const icon = document.getElementById(${projectId}-icon);
+            
+            if (codeSection.classList.contains('hidden')) {
+                codeSection.classList.remove('hidden');
+                icon.setAttribute('data-feather', 'chevron-up');
+            } else {
+                codeSection.classList.add('hidden');
+                icon.setAttribute('data-feather', 'chevron-down');
+            }
+            
+            feather.replace();
+        }
+        
+        // Terminal functionality
+        document.getElementById('mini-terminal').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const command = this.textContent.trim().toLowerCase();
+                const output = document.getElementById('terminal-output');
+                
+                if (command === 'clear') {
+                    this.textContent = '';
+                    output.classList.add('hidden');
+                } else if (['about', 'projects', 'experience', 'skills', 'achievements', 'contact'].includes(command)) {
+                    openTab(command);
+                    output.classList.add('hidden');
+                } else if (command === 'help' || command === '') {
+                    output.classList.remove('hidden');
+                } else {
+                    output.textContent = Command not found: ${command}. Type 'help' for available commands.;
+                    output.classList.remove('hidden');
+                }
+                
+                this.textContent = '';
+            }
+        });
+        
+        // Contact form functionality
+        function sendMessage() {
+            const name = document.getElementById('contact-name').textContent.trim();
+            const email = document.getElementById('contact-email').textContent.trim();
+            const message = document.getElementById('contact-message').textContent.trim();
+            
+            if (name && email && message) {
+                // In a real implementation, you would send this data to a server
+                document.getElementById('contact-success').classList.remove('hidden');
+                
+                // Clear form
+                document.getElementById('contact-name').textContent = '';
+                document.getElementById('contact-email').textContent = '';
+                document.getElementById('contact-message').textContent = '';
+                
+                // Show success message for 5 seconds
+                setTimeout(() => {
+                    document.getElementById('contact-success').classList.add('hidden');
+                }, 5000);
+            } else {
+                alert('Please fill in all fields');
+            }
+        }
+        
+        // Allow Enter key to submit contact form
+        document.getElementById('contact-message').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    </script>
 </body>
 </html>
